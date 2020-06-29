@@ -1,7 +1,7 @@
 function Snake() {
     this.x = 0;
     this.y = 0;
-    this.xspeed=scale*1;
+    this.xspeed=scale*3;
     this.yspeed=0;
     this.total=0;
     this.tail=[];
@@ -66,5 +66,15 @@ function Snake() {
         }
         return false;
         
+    }
+    this.checkCollision = function() {
+        for(var i=0 ; i<this.tail.length; i++){
+            if(this.x===this.tail[i].x && this.y===this.tail[i].y){
+                this.total=0;
+                this.tail=[];
+                this.x=0;
+                this.y=0;
+        }
+    }
     }
 }
